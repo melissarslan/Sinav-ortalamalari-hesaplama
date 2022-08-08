@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sınav Ort. Hesaplama</title>
+
+    <style>
+        .snv{
+            font-size: 20px;
+        }
+
+        #sinav1, #sinav2, #sinav3 {
+            margin: 20px;
+            padding: 3px;
+            border-radius: 5px;
+        }
+
+        #hesapla{
+            
+            border-radius: 5px;
+            border: 2px solid black;
+            margin: 20px 20px 20px 110px;
+            padding: 5px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JS Sınav Ortalamaları Hesaplama</h1>
+
+    <label class="snv">1. Sınav : </label>
+    <input type="number" id="sinav1">
+
+    <br>
+    <label class="snv">2. Sınav : </label>
+    <input type="number" id="sinav2">
+    
+    <br>
+    <label class="snv">3. Sınav : </label>
+    <input type="number" id="sinav3">
+     
+    <br>
+    <button id="hesapla">Hesapla</button>
+
+    <div id="sonuc"></div>
+
+    <script>
+
+        function hesapla(){
+
+            let sinav1 = document.getElementById("sinav1").value;
+            let sinav2 = document.getElementById("sinav2").value;
+            let sinav3 = document.getElementById("sinav3").value;
+
+            let s1   = Number(sinav1);
+            let s2   = Number(sinav2);
+            let s3   = Number(sinav3);
+            
+            let ortalama = (s1 + s2 + s3 ) / 3 ;
+             
+            if(ortalama > 49.5)
+            document.getElementById("sonuc").innerHTML = " Ortalama : " + ortalama + " -- Geçtiniz.";
+            
+            else
+            document.getElementById("sonuc").innerHTML = " Ortalama : " + ortalama +  " -- Kaldınız. ";
+        }
+
+        let hesaplaBtn  = document.getElementById("hesapla");
+        hesaplaBtn.onclick = hesapla;
+
+    </script>
+    
+</body>
+</html>
